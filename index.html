@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#ffdce8">
+
+<title>For My Favorite Person ❤️</title>
+
+<style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    color: #5d3042;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ffffff 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            #ffe4ee 0%,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe3ed,
+            #fff9fb
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   SCREEN
+===================================================== */
+
+.screen {
+
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 25px 15px;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.screen.active {
+
+    display: flex;
+
+    animation:
+        fadeIn 0.7s ease;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+
+    width: min(900px, 100%);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.9);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(167,74,105,0.16);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+h1 {
+
+    font-size:
+        clamp(2.3rem, 8vw, 4.8rem);
+
+    margin: 10px 0;
+
+    color: #d93668;
+
+    line-height: 1.05;
+}
+
+h2 {
+
+    font-size:
+        clamp(1.4rem, 4vw, 2rem);
+
+    margin: 15px 0;
+}
+
+p {
+
+    line-height: 1.75;
+
+    font-size: 1rem;
+}
+
+.script {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+}
+
+.small {
+
+    font-size: 0.9rem;
+
+    opacity: 0.7;
+}
+
+.emoji {
+
+    font-size: 4.5rem;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.btn {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        14px 25px;
+
+    margin: 8px;
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f14e7c,
+            #ff8ead
+        );
+
+    box-shadow:
+        0 9px 25px
+        rgba(241,78,124,0.25);
+
+    transition:
+        0.3s ease;
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+}
+
+.btn:active {
+
+    transform:
+        scale(0.96);
+}
+
+.btn.secondary {
+
+    background: white;
+
+    color: #d93668;
+
+    border:
+        1px solid
+        #ffd0dc;
+}
+
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.warning {
+
+    padding: 20px;
+
+    margin: 25px 0;
+
+    border:
+        1px dashed
+        #e78aa5;
+
+    border-radius: 22px;
+
+    background:
+        #fff7fa;
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.password {
+
+    display: flex;
+
+    max-width: 450px;
+
+    margin: 25px auto;
+
+    gap: 10px;
+}
+
+.password input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px 18px;
+
+    border:
+        1px solid
+        #f1b4c6;
+
+    border-radius: 50px;
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 1rem;
+}
+
+.error {
+
+    min-height: 25px;
+
+    color: #d93668;
+}
+
+
+/* =====================================================
+   BOUQUETS
+===================================================== */
+
+.bouquets {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 800px;
+
+    margin: 30px auto;
+}
+
+.bouquet {
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fff1f6
+        );
+
+    padding: 25px 15px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(167,74,105,0.12);
+
+    transition:
+        0.3s ease;
+}
+
+.bouquet:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 20px 40px
+        rgba(167,74,105,0.20);
+}
+
+.flowers {
+
+    font-size: 4.5rem;
+
+    margin-bottom: 10px;
+}
+
+.bouquet b {
+
+    display: block;
+
+    color: #d93668;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(69,28,45,0.5);
+
+    z-index: 100;
+}
+
+.popup.show {
+
+    display: flex;
+}
+
+.popup-box {
+
+    width:
+        min(460px, 100%);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 30px;
+
+    animation:
+        popupAnimation
+        0.4s ease;
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+.gift {
+
+    width: 220px;
+
+    height: 170px;
+
+    position: relative;
+
+    margin: 35px auto;
+
+    cursor: pointer;
+
+    animation:
+        floatingGift
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+.gift-box {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 20px;
+
+    width: 180px;
+
+    height: 110px;
+
+    background: #f47b9b;
+
+    border-radius: 8px;
+}
+
+.gift-lid {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 10px;
+
+    width: 200px;
+
+    height: 42px;
+
+    background: #e9567f;
+
+    border-radius: 8px;
+
+    transition:
+        0.6s ease;
+
+    z-index: 3;
+}
+
+.gift.open .gift-lid {
+
+    transform:
+        translateY(-70px)
+        rotate(-7deg);
+}
+
+.ribbon-v {
+
+    position: absolute;
+
+    left: 98px;
+
+    bottom: 0;
+
+    width: 25px;
+
+    height: 110px;
+
+    background: #ffd7e3;
+
+    z-index: 4;
+}
+
+.ribbon-h {
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 35px;
+
+    width: 180px;
+
+    height: 20px;
+
+    background: #ffd7e3;
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-container {
+
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    height: 0;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    margin:
+        25px 0;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =====================================================
+   PHOTO GALLERY
+===================================================== */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 18px;
+
+    margin:
+        30px 0;
+}
+
+.memory {
+
+    margin: 0;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(167,74,105,0.12);
+
+    transition:
+        0.3s ease;
+}
+
+.memory:hover {
+
+    transform:
+        scale(1.03)
+        rotate(0deg);
+}
+
+.memory:nth-child(odd) {
+
+    transform:
+        rotate(-2deg);
+}
+
+.memory:nth-child(even) {
+
+    transform:
+        rotate(2deg);
+}
+
+.memory img {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+}
+
+.memory figcaption {
+
+    padding: 8px;
+
+    font-family:
+        cursive;
+
+    font-size: 1.3rem;
+
+    color: #d93668;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final h1 {
+
+    font-size:
+        clamp(
+            2.4rem,
+            9vw,
+            5.5rem
+        );
+}
+
+.final-message {
+
+    max-width: 750px;
+
+    margin:
+        25px auto;
+
+    font-size:
+        clamp(
+            1rem,
+            3vw,
+            1.25rem
+        );
+}
+
+.signature {
+
+    font-family:
+        cursive;
+
+    font-size: 2rem;
+
+    color: #d93668;
+
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d93668;
+
+    font-size: 1.3rem;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.15);
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        rise
+        linear
+        forwards;
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+
+    position: fixed;
+
+    top: -30px;
+
+    pointer-events: none;
+
+    z-index: 200;
+
+    animation:
+        confettiFall
+        4s
+        linear
+        forwards;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes popupAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+    }
+}
+
+@keyframes floatingGift {
+
+    50% {
+
+        transform:
+            translateY(-10px);
+    }
+}
+
+@keyframes rise {
+
+    to {
+
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes confettiFall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px) {
+
+    .card {
+
+        padding:
+            28px 16px;
+
+        border-radius:
+            28px;
+    }
+
+    .bouquets {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 290px;
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .password {
+
+        flex-direction:
+            column;
+    }
+
+    .password button {
+
+        width: 100%;
+    }
+
+    .flowers {
+
+        font-size: 4rem;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND MUSIC
+===================================================== -->
+
+<audio
+    id="backgroundMusic"
+    loop>
+
+    <source
+        src="assets/our-song.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-button"
+    onclick="toggleMusic()"
+    id="musicButton">
+
+    🎵
+
+</button>
+
+
+
+<!-- =====================================================
+     SCREEN 1
+===================================================== -->
+
+<section
+    class="screen active"
+    id="screen1">
+
+    <div class="card">
+
+        <div class="emoji">
+            ⚠️
+        </div>
+
+        <p class="small">
+            A very serious announcement...
+        </p>
+
+        <h1 class="script">
+            WARNING
+        </h1>
+
+        <div class="warning">
+
+            This website contains excessive
+            amounts of love, embarrassing
+            memories, random feelings,
+            and <b>ONE very special boyfriend.</b>
+
+            😂❤️
+
+            <br><br>
+
+            <b>
+                Continue at your own risk.
+            </b>
+
+        </div>
+
+        <button
+            class="btn"
+            onclick="nextScreen(2)">
+
+            I'm ready 😎❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 2
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen2">
+
+    <div class="card">
+
+        <div class="emoji">
+            👀
+        </div>
+
+        <p class="small">
+            Hey, you...
+        </p>
+
+        <h1 class="script">
+            Hieee ARYAN... 👀❤️
+        </h1>
+
+        <p>
+            Yes, <b>YOU.</b>
+            Don't scroll away. 😒
+        </p>
+
+        <button
+            class="btn"
+            onclick="nextScreen(3)">
+
+            Okay okay... 😭
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 3
+     PASSWORD
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen3">
+
+    <div class="card">
+
+        <div class="emoji">
+            🔐
+        </div>
+
+        <h2>
+            Secret password required
+        </h2>
+
+        <p>
+            It's something only we know... 👀
+        </p>
+
+        <div class="password">
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password">
+
+            <button
+                class="btn"
+                onclick="checkPassword()">
+
+                Unlock ❤️
+
+            </button>
+
+        </div>
+
+        <div
+            class="error"
+            id="passwordError">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 4
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen4">
+
+    <div class="card">
+
+        <div class="emoji">
+            😒
+        </div>
+
+        <h2>
+            What do you think?? 👀
+        </h2>
+
+        <p>
+            Do you think it's a surprise?
+        </p>
+
+        <button
+            class="btn"
+            onclick="nextScreen(5)">
+
+            YESSS ❤️
+
+        </button>
+
+        <button
+            class="btn secondary"
+            onclick="nextScreen(5)">
+
+            Maybe... 👀
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 5
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen5">
+
+    <div class="card">
+
+        <div class="emoji">
+            🥺
+        </div>
+
+        <h2>
+            One more question...
+        </h2>
+
+        <p>
+
+            <b>
+                Do you think I'm wishing you??
+            </b>
+
+            😏
+
+        </p>
+
+        <button
+            class="btn"
+            onclick="nextScreen(6)">
+
+            Obviously YES ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 6
+     BOUQUETS
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen6">
+
+    <div class="card">
+
+        <h2 class="script"
+            style="font-size:3rem">
+
+            Choose a bouquet 🌷
+
+        </h2>
+
+        <p>
+
+            Pick one...
+
+            <br>
+
+            but choose carefully. 👀❤️
+
+        </p>
+
+
+        <div class="bouquets">
+
+
+            <!-- BOUQUET 1 -->
+
+            <button
+                class="bouquet"
+                onclick="showBouquet(1)">
+
+                <div class="flowers">
+                    💐
+                </div>
+
+                <b>
+                    CLICK ME
+                </b>
+
+                <span>
+                    Love 🌷
+                </span>
+
+            </button>
+
+
+
+            <!-- BOUQUET 2 -->
+
+            <button
+                class="bouquet"
+                onclick="showBouquet(2)">
+
+                <div class="flowers">
+                    🌷💐
+                </div>
+
+                <b>
+                    CLICK ME
+                </b>
+
+                <span>
+                    Happiness 💗
+                </span>
+
+            </button>
+
+
+
+            <!-- BOUQUET 3 -->
+
+            <button
+                class="bouquet"
+                onclick="showBouquet(3)">
+
+                <div class="flowers">
+                    🌹💐
+                </div>
+
+                <b>
+                    CLICK ME
+                </b>
+
+                <span>
+                    Forever 🎀
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+        <button
+            class="btn"
+            id="mainSurpriseButton"
+            style="display:none"
+            onclick="nextScreen(7)">
+
+            MAIN SURPRISE 🎁
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 7
+     GIFT
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen7">
+
+    <div class="card">
+
+        <div class="emoji">
+            🎁
+        </div>
+
+        <h2>
+            There's still something inside...
+        </h2>
+
+        <p>
+            And this one is made
+            especially for you. ❤️
+        </p>
+
+
+        <div
+            class="gift"
+            id="gift"
+            onclick="openGift()">
+
+            <div
+                class="gift-lid">
+            </div>
+
+            <div
+                class="ribbon-h">
+            </div>
+
+            <div
+                class="gift-box">
+            </div>
+
+            <div
+                class="ribbon-v">
+            </div>
+
+        </div>
+
+
+        <p class="small">
+            Tap the gift 🎁
+        </p>
+
+
+        <button
+            class="btn"
+            id="giftButton"
+            style="display:none"
+            onclick="nextScreen(8)">
+
+            OPEN MY GIFT ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 8
+     VIDEO
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen8">
+
+    <div class="card">
+
+        <div class="emoji">
+            🎀
+        </div>
+
+        <h2 class="script"
+            style="font-size:3rem">
+
+            For you, my person ❤️
+
+        </h2>
+
+        <p>
+            I made this little
+            something just for you.
+        </p>
+
+
+        <div class="video-container">
+
+            <!--
+            =================================================
+            IMPORTANT:
+
+            Replace YOUR_VIDEO_ID with your YouTube video ID.
+
+            Example:
+
+            https://youtu.be/Gigpglm3XNw?si=o716_aA6F7pddGNq
+
+            Video ID:
+
+            ABC123
+
+            =================================================
+            -->
+
+            <iframe
+                src="https://youtu.be/Gigpglm3XNw?si=o716_aA6F7pddGNq"
+                title="The Lyrics Means Alot what I can't say directly to you!!"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="nextScreen(9)">
+
+            One Last Thing... 💕
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 9
+     MEMORY SCRAPBOOK
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen9">
+
+    <div class="card">
+
+        <div class="emoji">
+            📸
+        </div>
+
+        <h2 class="script"
+            style="font-size:3rem">
+
+            A few reasons
+            you're my favorite...
+
+        </h2>
+
+        <p>
+            Some moments I would choose
+            again and again. ❤️
+        </p>
+
+
+        <div class="gallery">
+
+
+            <figure class="memory">
+
+                <img
+                    src="assets/photo1.jpg"
+                    alt="Our first Picture">
+
+                <figcaption>
+                    Our first picture 💗
+                </figcaption>
+
+            </figure>
+
+
+
+            <figure class="memory">
+
+                <img
+                    src="assets/photo2.jpg"
+                    alt="My favorite moment">
+
+                <figcaption>
+                    My favorite moment 🥺
+                </figcaption>
+
+            </figure>
+
+
+
+            <figure class="memory">
+
+                <img
+                    src="assets/photo3.jpg"
+                    alt="Close to my Heart">
+
+                <figcaption>
+                    Close to my Heart 💗
+                </figcaption>
+
+            </figure>
+
+
+
+            <figure class="memory">
+
+                <img
+                    src="assets/photo4.jpg"
+                    alt="Just us">
+
+                <figcaption>
+                    Just us ❤️
+                </figcaption>
+
+            </figure>
+
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="nextScreen(10)">
+
+            Keep going... 🌷
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 10
+     FINAL
+===================================================== -->
+
+<section
+    class="screen final"
+    id="screen10">
+
+    <div class="card">
+
+        <div class="emoji">
+            ❤️
+        </div>
+
+        <p class="small">
+            A message from my heart...
+        </p>
+
+
+        <h1 id="finalTitle">
+        </h1>
+
+
+        <div
+            class="final-message"
+            id="finalMessage"
+            style="opacity:0">
+
+
+            <p>
+
+                To my only person who is
+                <b>my world</b>
+
+                🌷🎀
+
+            </p>
+
+
+            <p>
+
+                Thank you for being my safe place,
+                my happiness, my favorite person,
+                and the one who makes ordinary
+                days feel special. I know sometimes 
+                I think too much and make simple things complicated.
+                I know we'll manage together all the stuff
+                My only wish is that be with me and be by my side
+                always no matter how hard it is to handle me for you.
+                Our love should be greater than anything and any problem.
+
+            </p>
+
+
+            <p>
+
+                From our random conversations
+                to our silly fights, every little
+                moment with you has become a
+                memory I want to keep forever.
+
+                🥺❤️
+
+            </p>
+
+
+            <p>
+
+                <b>
+                    You aren't just my boyfriend.
+                    You're my person. ❤️
+                </b>
+
+            </p>
+
+
+            <div class="signature">
+
+                With all my love,
+
+                <br>
+
+                Your favorite person 💗
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                class="btn"
+                onclick="celebrate()">
+
+                One more surprise ✨
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div
+    class="popup"
+    id="bouquetPopup">
+
+    <div class="popup-box">
+
+        <div
+            id="popupEmoji"
+            style="font-size:4rem">
+
+            💐
+
+        </div>
+
+
+        <h2
+            id="popupTitle">
+
+            Bouquet of Love
+
+        </h2>
+
+
+        <p
+            id="popupMessage">
+
+        </p>
+
+
+        <button
+            class="btn"
+            onclick="closePopup()">
+
+            Awww... ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   PERSONAL SETTINGS
+===================================================== */
+
+/*
+
+CHANGE THIS PASSWORD.
+
+Example:
+
+const SECRET_PASSWORD = "BABY";
+
+*/
+
+const SECRET_PASSWORD = "LOVE";
+
+
+/*
+YOUR YOUTUBE VIDEO
+
+Replace YOUR_VIDEO_ID in the iframe above.
+
+*/
+
+
+/* =====================================================
+   SCREEN NAVIGATION
+===================================================== */
+
+function nextScreen(number) {
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById("screen" + number)
+        .classList.add("active");
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    if(number === 10) {
+
+        startFinalAnimation();
+
+    }
+
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function checkPassword() {
+
+    const input =
+        document
+        .getElementById("passwordInput")
+        .value
+        .trim()
+        .toUpperCase();
+
+
+    const error =
+        document
+        .getElementById("passwordError");
+
+
+    if(input === SECRET_PASSWORD) {
+
+        error.textContent = "";
+
+        startMusic();
+
+        nextScreen(4);
+
+    }
+
+    else {
+
+        error.textContent =
+            "Hmm... that's not it 😒 Try again ❤️";
+
+    }
+
+}
+
+
+/* =====================================================
+   BOUQUETS
+===================================================== */
+
+function showBouquet(number) {
+
+    let title = "";
+
+    let message = "";
+
+    let emoji = "";
+
+
+    if(number === 1) {
+
+        emoji = "💐";
+
+        title =
+            "Bouquet of Love 🌷";
+
+        message =
+            "If love were flowers, " +
+            "I would give you an entire garden. " +
+            "Because somehow, even that still " +
+            "wouldn't be enough. ❤️";
+
+    }
+
+
+    if(number === 2) {
+
+        emoji = "🌷";
+
+        title =
+            "Bouquet of Happiness 💗";
+
+        message =
+            "You are one of the biggest reasons " +
+            "behind my smile. Thank you for making " +
+            "ordinary moments feel special. 🥺❤️";
+
+    }
+
+
+    if(number === 3) {
+
+        emoji = "🌹";
+
+        title =
+            "Bouquet of Forever 🎀";
+
+        message =
+            "No matter how many flowers I give you, " +
+            "they still won't be enough to express " +
+            "what you mean to me. You're my person. ❤️";
+
+    }
+
+
+    document
+        .getElementById("popupEmoji")
+        .textContent = emoji;
+
+
+    document
+        .getElementById("popupTitle")
+        .textContent = title;
+
+
+    document
+        .getElementById("popupMessage")
+        .textContent = message;
+
+
+    document
+        .getElementById("bouquetPopup")
+        .classList.add("show");
+
+
+    document
+        .getElementById("mainSurpriseButton")
+        .style.display = "inline-block";
+
+}
+
+
+/* =====================================================
+   CLOSE POPUP
+===================================================== */
+
+function closePopup() {
+
+    document
+        .getElementById("bouquetPopup")
+        .classList
+        .remove("show");
+
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+function openGift() {
+
+    document
+        .getElementById("gift")
+        .classList
+        .add("open");
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById("giftButton")
+            .style.display = "inline-block";
+
+    }, 600);
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document
+    .getElementById("backgroundMusic");
+
+
+const musicButton =
+    document
+    .getElementById("musicButton");
+
+
+function startMusic() {
+
+    music
+        .play()
+        .then(() => {
+
+            musicButton
+                .textContent = "🔊";
+
+        })
+        .catch(() => {
+
+            console.log(
+                "Browser blocked autoplay."
+            );
+
+        });
+
+}
+
+
+function toggleMusic() {
+
+    if(music.paused) {
+
+        startMusic();
+
+    }
+
+    else {
+
+        music.pause();
+
+        musicButton
+            .textContent = "🎵";
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL TYPING ANIMATION
+===================================================== */
+
+function startFinalAnimation() {
+
+    const title =
+        "HAPPY BOYFRIEND'S DAY ❤️";
+
+
+    const element =
+        document
+        .getElementById("finalTitle");
+
+
+    const message =
+        document
+        .getElementById("finalMessage");
+
+
+    element.textContent = "";
+
+    message.style.opacity = "0";
+
+
+    let index = 0;
+
+
+    const typing =
+        setInterval(() => {
+
+            element.textContent =
+                title.substring(0, index);
+
+
+            index++;
+
+
+            if(index > title.length) {
+
+                clearInterval(typing);
+
+
+                setTimeout(() => {
+
+                    message.style.transition =
+                        "opacity 1.5s ease";
+
+                    message.style.opacity = "1";
+
+
+                    createFloatingHearts();
+
+                }, 600);
+
+            }
+
+        }, 90);
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createFloatingHearts() {
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "💗",
+        "🌷",
+        "✨",
+        "🎀"
+    ];
+
+
+    for(let i = 0; i < 25; i++) {
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "floating-heart";
+
+
+        heart.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    *
+                    symbols.length
+                )
+            ];
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25)
+            + "px";
+
+
+        heart.style.animationDuration =
+            (4 + Math.random() * 5)
+            + "s";
+
+
+        document.body
+            .appendChild(heart);
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 9000);
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL CELEBRATION
+===================================================== */
+
+function celebrate() {
+
+    createFloatingHearts();
+
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "🌷",
+        "🎀",
+        "✨",
+        "💗"
+    ];
+
+
+    for(let i = 0; i < 50; i++) {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "confetti";
+
+
+        item.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+
+        item.style.fontSize =
+            (15 + Math.random() * 25)
+            + "px";
+
+
+        item.style.animationDelay =
+            Math.random() * 1.5
+            + "s";
+
+
+        document.body
+            .appendChild(item);
+
+
+        setTimeout(() => {
+
+            item.remove();
+
+        }, 5000);
+
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
